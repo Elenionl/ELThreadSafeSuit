@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSObject+ELThreadSafe.h"
 
 @interface NSMutableArray (ELThreadSafe)
 
@@ -17,6 +18,6 @@
 
 @interface NSArray (ELThreadSafe)
 
-- (NSMutableArray *)threadSafeMutableCopy;
+- (NSMutableArray *)el_threadSafeMutableCopy;
 
 @end

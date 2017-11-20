@@ -7,12 +7,9 @@
 //
 
 #import "ELThreadSafeObject.h"
-#import <CoreFoundation/CoreFoundation.h>
-#import <objc/runtime.h>
+#import "NSObject+ELThreadSafe.h"
 
-static NSMutableDictionary<NSString *, ELThreadSafeFilterAction> *actions;
-
-@interface ELThreadSafeObject<__covariant OT>: NSObject
+@interface ELThreadSafeObject ()
 
 @end
 
@@ -65,10 +62,6 @@ static NSMutableDictionary<NSString *, ELThreadSafeFilterAction> *actions;
     return self;
 }
 
-- (void)setInnerObject:(id)innerObject {
-    _innerObject = innerObject;
-}
-
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
     if ([self isSelectorNeedProtect:anInvocation.selector]) {
         dispatch_barrier_sync(_currentQueue, ^{
@@ -86,6 +79,8 @@ static NSMutableDictionary<NSString *, ELThreadSafeFilterAction> *actions;
     NSMethodSignature *sign = [[_innerObject class] instanceMethodSignatureForSelector:aSelector];
     return sign;
 }
+
+
 
 - (BOOL)isSelectorNeedProtect:(SEL)selector {
     if ([_innerObject el_threadSafeFilterActionForInstance]) {
@@ -105,38 +100,12 @@ static NSMutableDictionary<NSString *, ELThreadSafeFilterAction> *actions;
     return self;
 }
 
-
-@end
-
-@implementation NSObject (ELThreadSafe)
-
-- (BOOL)el_isThreadSafe {
-    return false;
+- (NSObject *)innerObject {
+    return _innerObject;
 }
 
-- (instancetype)el_normalObject {
-    return self;
-}
-
-- (instancetype)el_threadSafeObject {
-    ELThreadSafeObject *object = [[ELThreadSafeObject alloc] initWithInnerObject:self];
-    return (NSObject *)object;
-}
-
-+ (void)setEl_threadSafeFilterActionForClass:(ELThreadSafeFilterAction)el_threadSafeFilterActionForClass {
-    objc_setAssociatedObject(self, sel_getName(@selector(setEl_threadSafeFilterActionForClass:)), el_threadSafeFilterActionForClass, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-+ (ELThreadSafeFilterAction)el_threadSafeFilterActionForClass {
-    return objc_getAssociatedObject(self, sel_getName(@selector(setEl_threadSafeFilterActionForClass:)));
-}
-
-- (void)setEl_threadSafeFilterActionForInstance:(ELThreadSafeFilterAction)el_threadSafeFilterActionForInstance {
-    objc_setAssociatedObject(self, sel_getName(@selector(setEl_threadSafeFilterActionForInstance:)), el_threadSafeFilterActionForInstance, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-- (ELThreadSafeFilterAction)el_threadSafeFilterActionForInstance {
-    return objc_getAssociatedObject(self, sel_getName(@selector(setEl_threadSafeFilterActionForInstance:)));
+- (void)setInnerObject:(NSObject *)innerObject {
+    _innerObject = innerObject;
 }
 
 @end

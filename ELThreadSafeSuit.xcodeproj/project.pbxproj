@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C34A7FA1FC3250D00AC6B50 /* NSObject+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34A7F91FC3250D00AC6B50 /* NSObject+ELThreadSafe.m */; };
+		2C34A7FD1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.m */; };
 		2C3E384C1FC2C61C007A1405 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E384B1FC2C61C007A1405 /* AppDelegate.m */; };
 		2C3E384F1FC2C61D007A1405 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E384E1FC2C61D007A1405 /* ViewController.m */; };
 		2C3E38521FC2C61D007A1405 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E38501FC2C61D007A1405 /* Main.storyboard */; };
@@ -14,8 +16,8 @@
 		2C3E38571FC2C61D007A1405 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E38551FC2C61D007A1405 /* LaunchScreen.storyboard */; };
 		2C3E385A1FC2C61D007A1405 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38591FC2C61D007A1405 /* main.m */; };
 		2C3E38641FC2C61D007A1405 /* ELThreadSafeSuitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38631FC2C61D007A1405 /* ELThreadSafeSuitTests.m */; };
-		2C3E387A1FC2D4B5007A1405 /* ELThreadSafeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38761FC2D4B4007A1405 /* ELThreadSafeArray.m */; };
-		2C3E387B1FC2D4B5007A1405 /* ELThreadSafeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38781FC2D4B4007A1405 /* ELThreadSafeDictionary.m */; };
+		2C3E387A1FC2D4B5007A1405 /* NSMutableArray+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38761FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.m */; };
+		2C3E387B1FC2D4B5007A1405 /* NSMutableDictionary+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38781FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.m */; };
 		2C3E387E1FC2F74B007A1405 /* ELThreadSafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E387D1FC2F74B007A1405 /* ELThreadSafeObject.m */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C34A7F81FC3250D00AC6B50 /* NSObject+ELThreadSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ELThreadSafe.h"; sourceTree = "<group>"; };
+		2C34A7F91FC3250D00AC6B50 /* NSObject+ELThreadSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ELThreadSafe.m"; sourceTree = "<group>"; };
+		2C34A7FB1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableOrderedSet+ELTHreadSafe.h"; sourceTree = "<group>"; };
+		2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableOrderedSet+ELTHreadSafe.m"; sourceTree = "<group>"; };
 		2C3E38471FC2C61C007A1405 /* ELThreadSafeSuit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELThreadSafeSuit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3E384A1FC2C61C007A1405 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2C3E384B1FC2C61C007A1405 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,10 +49,10 @@
 		2C3E385F1FC2C61D007A1405 /* ELThreadSafeSuitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELThreadSafeSuitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3E38631FC2C61D007A1405 /* ELThreadSafeSuitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELThreadSafeSuitTests.m; sourceTree = "<group>"; };
 		2C3E38651FC2C61D007A1405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C3E38761FC2D4B4007A1405 /* ELThreadSafeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELThreadSafeArray.m; sourceTree = "<group>"; };
-		2C3E38771FC2D4B4007A1405 /* ELThreadSafeArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELThreadSafeArray.h; sourceTree = "<group>"; };
-		2C3E38781FC2D4B4007A1405 /* ELThreadSafeDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELThreadSafeDictionary.m; sourceTree = "<group>"; };
-		2C3E38791FC2D4B4007A1405 /* ELThreadSafeDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELThreadSafeDictionary.h; sourceTree = "<group>"; };
+		2C3E38761FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ELThreadSafe.m"; sourceTree = "<group>"; };
+		2C3E38771FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ELThreadSafe.h"; sourceTree = "<group>"; };
+		2C3E38781FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ELThreadSafe.m"; sourceTree = "<group>"; };
+		2C3E38791FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ELThreadSafe.h"; sourceTree = "<group>"; };
 		2C3E387C1FC2F74B007A1405 /* ELThreadSafeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELThreadSafeObject.h; sourceTree = "<group>"; };
 		2C3E387D1FC2F74B007A1405 /* ELThreadSafeObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELThreadSafeObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,12 +96,16 @@
 		2C3E38491FC2C61C007A1405 /* ELThreadSafeSuit */ = {
 			isa = PBXGroup;
 			children = (
-				2C3E38771FC2D4B4007A1405 /* ELThreadSafeArray.h */,
-				2C3E38761FC2D4B4007A1405 /* ELThreadSafeArray.m */,
-				2C3E38791FC2D4B4007A1405 /* ELThreadSafeDictionary.h */,
-				2C3E38781FC2D4B4007A1405 /* ELThreadSafeDictionary.m */,
+				2C3E38771FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.h */,
+				2C3E38761FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.m */,
+				2C3E38791FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.h */,
+				2C3E38781FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.m */,
 				2C3E387C1FC2F74B007A1405 /* ELThreadSafeObject.h */,
 				2C3E387D1FC2F74B007A1405 /* ELThreadSafeObject.m */,
+				2C34A7F81FC3250D00AC6B50 /* NSObject+ELThreadSafe.h */,
+				2C34A7F91FC3250D00AC6B50 /* NSObject+ELThreadSafe.m */,
+				2C34A7FB1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.h */,
+				2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.m */,
 				2C3E384A1FC2C61C007A1405 /* AppDelegate.h */,
 				2C3E384B1FC2C61C007A1405 /* AppDelegate.m */,
 				2C3E384D1FC2C61D007A1405 /* ViewController.h */,
@@ -221,11 +231,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C3E384F1FC2C61D007A1405 /* ViewController.m in Sources */,
-				2C3E387A1FC2D4B5007A1405 /* ELThreadSafeArray.m in Sources */,
+				2C3E387A1FC2D4B5007A1405 /* NSMutableArray+ELThreadSafe.m in Sources */,
 				2C3E387E1FC2F74B007A1405 /* ELThreadSafeObject.m in Sources */,
 				2C3E385A1FC2C61D007A1405 /* main.m in Sources */,
+				2C34A7FD1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.m in Sources */,
 				2C3E384C1FC2C61C007A1405 /* AppDelegate.m in Sources */,
-				2C3E387B1FC2D4B5007A1405 /* ELThreadSafeDictionary.m in Sources */,
+				2C3E387B1FC2D4B5007A1405 /* NSMutableDictionary+ELThreadSafe.m in Sources */,
+				2C34A7FA1FC3250D00AC6B50 /* NSObject+ELThreadSafe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "ELThreadSafeArray.h"
+#import "NSMutableArray+ELThreadSafe.h"
 @interface ViewController ()
 
 @end
@@ -16,8 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray *array = @[@13, @14, @15, @16, @17, @18].threadSafeMutableCopy;
-    NSLog(@"%@", array);
+    NSArray *array = @[@13, @14, @15, @16, @17, @18].el_threadSafeMutableCopy;
+    NSLog(@"%@", array[0]);
     NSMutableArray *testOne = [[NSMutableArray alloc] init];
     [testOne addObjectsFromArray:array];
     NSLog(@"%@", testOne);
@@ -26,7 +26,8 @@
     NSLog(@"%@", testTwo);
     NSArray *testThree = [@[] arrayByAddingObjectsFromArray:array];
     NSLog(@"%@", testThree);
-    NSArray *testFour = @[@1].threadSafeMutableCopy.normalArray.threadSafeMutableCopy.normalArray.threadSafeMutableCopy.normalArray;
+    NSArray *testFour = @[@1].el_threadSafeMutableCopy.el_normalObject.el_threadSafeMutableCopy.el_normalObject;
+    NSLog(@"%@", testFour);
 }
 
 

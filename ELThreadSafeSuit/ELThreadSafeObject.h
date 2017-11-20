@@ -8,15 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef BOOL(^ELThreadSafeFilterAction)(SEL aSelector);
+@interface ELThreadSafeObject<OT: NSObject *>: NSObject
 
-@interface NSObject (ELThreadSafe)
+@property (nonatomic, strong) OT innerObject;
 
-- (BOOL)el_isThreadSafe;
-- (instancetype)el_normalObject;
-- (instancetype)el_threadSafeObject;
-
-@property (class, nonatomic, copy) ELThreadSafeFilterAction el_threadSafeFilterActionForClass;
-@property (nonatomic, copy) ELThreadSafeFilterAction el_threadSafeFilterActionForInstance;
+- (instancetype)initWithInnerObject:(OT)innerObject;
 
 @end
+
+
