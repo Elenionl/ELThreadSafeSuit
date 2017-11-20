@@ -14,6 +14,9 @@
 		2C3E38571FC2C61D007A1405 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E38551FC2C61D007A1405 /* LaunchScreen.storyboard */; };
 		2C3E385A1FC2C61D007A1405 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38591FC2C61D007A1405 /* main.m */; };
 		2C3E38641FC2C61D007A1405 /* ELThreadSafeSuitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38631FC2C61D007A1405 /* ELThreadSafeSuitTests.m */; };
+		2C3E387A1FC2D4B5007A1405 /* ELThreadSafeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38761FC2D4B4007A1405 /* ELThreadSafeArray.m */; };
+		2C3E387B1FC2D4B5007A1405 /* ELThreadSafeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38781FC2D4B4007A1405 /* ELThreadSafeDictionary.m */; };
+		2C3E387E1FC2F74B007A1405 /* ELThreadSafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E387D1FC2F74B007A1405 /* ELThreadSafeObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		2C3E385F1FC2C61D007A1405 /* ELThreadSafeSuitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELThreadSafeSuitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3E38631FC2C61D007A1405 /* ELThreadSafeSuitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELThreadSafeSuitTests.m; sourceTree = "<group>"; };
 		2C3E38651FC2C61D007A1405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C3E38761FC2D4B4007A1405 /* ELThreadSafeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELThreadSafeArray.m; sourceTree = "<group>"; };
+		2C3E38771FC2D4B4007A1405 /* ELThreadSafeArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELThreadSafeArray.h; sourceTree = "<group>"; };
+		2C3E38781FC2D4B4007A1405 /* ELThreadSafeDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELThreadSafeDictionary.m; sourceTree = "<group>"; };
+		2C3E38791FC2D4B4007A1405 /* ELThreadSafeDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELThreadSafeDictionary.h; sourceTree = "<group>"; };
+		2C3E387C1FC2F74B007A1405 /* ELThreadSafeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELThreadSafeObject.h; sourceTree = "<group>"; };
+		2C3E387D1FC2F74B007A1405 /* ELThreadSafeObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELThreadSafeObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,12 @@
 		2C3E38491FC2C61C007A1405 /* ELThreadSafeSuit */ = {
 			isa = PBXGroup;
 			children = (
+				2C3E38771FC2D4B4007A1405 /* ELThreadSafeArray.h */,
+				2C3E38761FC2D4B4007A1405 /* ELThreadSafeArray.m */,
+				2C3E38791FC2D4B4007A1405 /* ELThreadSafeDictionary.h */,
+				2C3E38781FC2D4B4007A1405 /* ELThreadSafeDictionary.m */,
+				2C3E387C1FC2F74B007A1405 /* ELThreadSafeObject.h */,
+				2C3E387D1FC2F74B007A1405 /* ELThreadSafeObject.m */,
 				2C3E384A1FC2C61C007A1405 /* AppDelegate.h */,
 				2C3E384B1FC2C61C007A1405 /* AppDelegate.m */,
 				2C3E384D1FC2C61D007A1405 /* ViewController.h */,
@@ -206,8 +221,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C3E384F1FC2C61D007A1405 /* ViewController.m in Sources */,
+				2C3E387A1FC2D4B5007A1405 /* ELThreadSafeArray.m in Sources */,
+				2C3E387E1FC2F74B007A1405 /* ELThreadSafeObject.m in Sources */,
 				2C3E385A1FC2C61D007A1405 /* main.m in Sources */,
 				2C3E384C1FC2C61C007A1405 /* AppDelegate.m in Sources */,
+				2C3E387B1FC2D4B5007A1405 /* ELThreadSafeDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "ELThreadSafeArray.h"
 @interface ViewController ()
 
 @end
@@ -16,13 +16,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSArray *array = @[@13, @14, @15, @16, @17, @18].threadSafeMutableCopy;
+    NSLog(@"%@", array);
+    NSMutableArray *testOne = [[NSMutableArray alloc] init];
+    [testOne addObjectsFromArray:array];
+    NSLog(@"%@", testOne);
+    NSMutableArray *testTwo = array.mutableCopy;
+    [testTwo removeObjectsInArray:array];
+    NSLog(@"%@", testTwo);
+    NSArray *testThree = [@[] arrayByAddingObjectsFromArray:array];
+    NSLog(@"%@", testThree);
+    NSArray *testFour = @[@1].threadSafeMutableCopy.normalArray.threadSafeMutableCopy.normalArray.threadSafeMutableCopy.normalArray;
 }
 
 
