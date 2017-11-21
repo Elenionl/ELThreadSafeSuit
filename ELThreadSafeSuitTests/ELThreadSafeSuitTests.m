@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "ELThreadSafeArray.h"
+
 @interface ELThreadSafeSuitTests : XCTestCase
 
 @end

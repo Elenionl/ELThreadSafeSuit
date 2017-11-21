@@ -8,43 +8,30 @@
 
 #import "NSMutableDictionary+ELThreadSafe.h"
 #import "ELThreadSafeObject.h"
-@interface ELThreadSafeDictionary: ELThreadSafeObject
-
-@end
-
-@implementation ELThreadSafeDictionary
-
-+ (void)load {
-    [super load];
-    [NSMutableDictionary setEl_threadSafeFilterActionForClass:^BOOL(SEL aSelector) {
-        if (!aSelector) {
-            return false;
-        }
-        NSString *selectorName = NSStringFromSelector(aSelector);
-        if ([selectorName hasPrefix:@"add"]) {
-            return true;
-        }
-        if ([selectorName hasPrefix:@"remove"]) {
-            return true;
-        }
-        if ([selectorName hasPrefix:@"set"]) {
-            return true;
-        }
-        return false;
-    }];
-}
-
-- (BOOL)isNSDictionary__ {
-    return true;
-}
-
-@end
 
 @implementation NSMutableDictionary (ELThreadSafe)
 
 - (instancetype)el_threadSafeObject {
-    ELThreadSafeDictionary *object = [[ELThreadSafeDictionary alloc] initWithInnerObject:self];
-    return (NSMutableDictionary *)object;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [NSMutableDictionary setEl_threadSafeFilterActionForClass:^BOOL(SEL aSelector) {
+            if (!aSelector) {
+                return false;
+            }
+            NSString *selectorName = NSStringFromSelector(aSelector);
+            if ([selectorName hasPrefix:@"add"]) {
+                return true;
+            }
+            if ([selectorName hasPrefix:@"remove"]) {
+                return true;
+            }
+            if ([selectorName hasPrefix:@"set"]) {
+                return true;
+            }
+            return false;
+        }];
+    });
+    return [super el_threadSafeObject];
 }
 
 + (instancetype)el_threadSafeDictionary {

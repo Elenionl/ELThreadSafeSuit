@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C34A7FA1FC3250D00AC6B50 /* NSObject+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34A7F91FC3250D00AC6B50 /* NSObject+ELThreadSafe.m */; };
-		2C34A7FD1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.m */; };
-		2C3E384C1FC2C61C007A1405 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E384B1FC2C61C007A1405 /* AppDelegate.m */; };
+		2C34A7FD1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m */; };
 		2C3E384F1FC2C61D007A1405 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E384E1FC2C61D007A1405 /* ViewController.m */; };
 		2C3E38521FC2C61D007A1405 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E38501FC2C61D007A1405 /* Main.storyboard */; };
 		2C3E38541FC2C61D007A1405 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E38531FC2C61D007A1405 /* Assets.xcassets */; };
@@ -19,6 +18,16 @@
 		2C3E387A1FC2D4B5007A1405 /* NSMutableArray+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38761FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.m */; };
 		2C3E387B1FC2D4B5007A1405 /* NSMutableDictionary+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38781FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.m */; };
 		2C3E387E1FC2F74B007A1405 /* ELThreadSafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E387D1FC2F74B007A1405 /* ELThreadSafeObject.m */; };
+		2C3E38B71FC44DB5007A1405 /* NSMutableSet+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38B61FC44DB5007A1405 /* NSMutableSet+ELThreadSafe.m */; };
+		2C3E38BA1FC45630007A1405 /* ELThreadSafeComparisonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38B91FC45630007A1405 /* ELThreadSafeComparisonTests.m */; };
+		2C3E38BB1FC45645007A1405 /* NSMutableArray+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38761FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.m */; };
+		2C3E38BC1FC4564A007A1405 /* NSMutableDictionary+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38781FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.m */; };
+		2C3E38BD1FC4564D007A1405 /* NSMutableOrderedSet+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m */; };
+		2C3E38BE1FC45651007A1405 /* NSMutableSet+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38B61FC44DB5007A1405 /* NSMutableSet+ELThreadSafe.m */; };
+		2C3E38BF1FC45654007A1405 /* ELThreadSafeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E387D1FC2F74B007A1405 /* ELThreadSafeObject.m */; };
+		2C3E38C01FC45657007A1405 /* NSObject+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34A7F91FC3250D00AC6B50 /* NSObject+ELThreadSafe.m */; };
+		2C3E38C91FC458EE007A1405 /* TestSuitObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38C81FC458EE007A1405 /* TestSuitObject.m */; };
+		2C3E38CA1FC45AB2007A1405 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E384B1FC2C61C007A1405 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +43,8 @@
 /* Begin PBXFileReference section */
 		2C34A7F81FC3250D00AC6B50 /* NSObject+ELThreadSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ELThreadSafe.h"; sourceTree = "<group>"; };
 		2C34A7F91FC3250D00AC6B50 /* NSObject+ELThreadSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ELThreadSafe.m"; sourceTree = "<group>"; };
-		2C34A7FB1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableOrderedSet+ELTHreadSafe.h"; sourceTree = "<group>"; };
-		2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableOrderedSet+ELTHreadSafe.m"; sourceTree = "<group>"; };
+		2C34A7FB1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableOrderedSet+ELThreadSafe.h"; sourceTree = "<group>"; };
+		2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableOrderedSet+ELThreadSafe.m"; sourceTree = "<group>"; };
 		2C3E38471FC2C61C007A1405 /* ELThreadSafeSuit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELThreadSafeSuit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3E384A1FC2C61C007A1405 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2C3E384B1FC2C61C007A1405 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -55,6 +64,12 @@
 		2C3E38791FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ELThreadSafe.h"; sourceTree = "<group>"; };
 		2C3E387C1FC2F74B007A1405 /* ELThreadSafeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELThreadSafeObject.h; sourceTree = "<group>"; };
 		2C3E387D1FC2F74B007A1405 /* ELThreadSafeObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELThreadSafeObject.m; sourceTree = "<group>"; };
+		2C3E38B21FC449EC007A1405 /* NSObject-_NSIsKinds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject-_NSIsKinds.h"; sourceTree = "<group>"; };
+		2C3E38B51FC44DB5007A1405 /* NSMutableSet+ELThreadSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableSet+ELThreadSafe.h"; sourceTree = "<group>"; };
+		2C3E38B61FC44DB5007A1405 /* NSMutableSet+ELThreadSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableSet+ELThreadSafe.m"; sourceTree = "<group>"; };
+		2C3E38B91FC45630007A1405 /* ELThreadSafeComparisonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELThreadSafeComparisonTests.m; sourceTree = "<group>"; };
+		2C3E38C71FC458EE007A1405 /* TestSuitObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSuitObject.h; sourceTree = "<group>"; };
+		2C3E38C81FC458EE007A1405 /* TestSuitObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSuitObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,16 +111,26 @@
 		2C3E38491FC2C61C007A1405 /* ELThreadSafeSuit */ = {
 			isa = PBXGroup;
 			children = (
-				2C3E38771FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.h */,
-				2C3E38761FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.m */,
-				2C3E38791FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.h */,
-				2C3E38781FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.m */,
-				2C3E387C1FC2F74B007A1405 /* ELThreadSafeObject.h */,
-				2C3E387D1FC2F74B007A1405 /* ELThreadSafeObject.m */,
-				2C34A7F81FC3250D00AC6B50 /* NSObject+ELThreadSafe.h */,
-				2C34A7F91FC3250D00AC6B50 /* NSObject+ELThreadSafe.m */,
-				2C34A7FB1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.h */,
-				2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.m */,
+				2C3E38C31FC458B3007A1405 /* TestComparison */,
+				2C3E38C21FC4589C007A1405 /* ELThreadSafeSuit */,
+				2C3E38C11FC4588A007A1405 /* SupportingFiles */,
+			);
+			path = ELThreadSafeSuit;
+			sourceTree = "<group>";
+		};
+		2C3E38621FC2C61D007A1405 /* ELThreadSafeSuitTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C3E38631FC2C61D007A1405 /* ELThreadSafeSuitTests.m */,
+				2C3E38B91FC45630007A1405 /* ELThreadSafeComparisonTests.m */,
+				2C3E38651FC2C61D007A1405 /* Info.plist */,
+			);
+			path = ELThreadSafeSuitTests;
+			sourceTree = "<group>";
+		};
+		2C3E38C11FC4588A007A1405 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				2C3E384A1FC2C61C007A1405 /* AppDelegate.h */,
 				2C3E384B1FC2C61C007A1405 /* AppDelegate.m */,
 				2C3E384D1FC2C61D007A1405 /* ViewController.h */,
@@ -116,16 +141,36 @@
 				2C3E38581FC2C61D007A1405 /* Info.plist */,
 				2C3E38591FC2C61D007A1405 /* main.m */,
 			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		2C3E38C21FC4589C007A1405 /* ELThreadSafeSuit */ = {
+			isa = PBXGroup;
+			children = (
+				2C3E38771FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.h */,
+				2C3E38761FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.m */,
+				2C3E38791FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.h */,
+				2C3E38781FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.m */,
+				2C34A7FB1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.h */,
+				2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m */,
+				2C3E38B51FC44DB5007A1405 /* NSMutableSet+ELThreadSafe.h */,
+				2C3E38B61FC44DB5007A1405 /* NSMutableSet+ELThreadSafe.m */,
+				2C3E387C1FC2F74B007A1405 /* ELThreadSafeObject.h */,
+				2C3E387D1FC2F74B007A1405 /* ELThreadSafeObject.m */,
+				2C34A7F81FC3250D00AC6B50 /* NSObject+ELThreadSafe.h */,
+				2C34A7F91FC3250D00AC6B50 /* NSObject+ELThreadSafe.m */,
+				2C3E38B21FC449EC007A1405 /* NSObject-_NSIsKinds.h */,
+			);
 			path = ELThreadSafeSuit;
 			sourceTree = "<group>";
 		};
-		2C3E38621FC2C61D007A1405 /* ELThreadSafeSuitTests */ = {
+		2C3E38C31FC458B3007A1405 /* TestComparison */ = {
 			isa = PBXGroup;
 			children = (
-				2C3E38631FC2C61D007A1405 /* ELThreadSafeSuitTests.m */,
-				2C3E38651FC2C61D007A1405 /* Info.plist */,
+				2C3E38C71FC458EE007A1405 /* TestSuitObject.h */,
+				2C3E38C81FC458EE007A1405 /* TestSuitObject.m */,
 			);
-			path = ELThreadSafeSuitTests;
+			path = TestComparison;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,13 +275,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3E38CA1FC45AB2007A1405 /* AppDelegate.m in Sources */,
 				2C3E384F1FC2C61D007A1405 /* ViewController.m in Sources */,
+				2C3E38C91FC458EE007A1405 /* TestSuitObject.m in Sources */,
 				2C3E387A1FC2D4B5007A1405 /* NSMutableArray+ELThreadSafe.m in Sources */,
 				2C3E387E1FC2F74B007A1405 /* ELThreadSafeObject.m in Sources */,
 				2C3E385A1FC2C61D007A1405 /* main.m in Sources */,
-				2C34A7FD1FC3311F00AC6B50 /* NSMutableOrderedSet+ELTHreadSafe.m in Sources */,
-				2C3E384C1FC2C61C007A1405 /* AppDelegate.m in Sources */,
+				2C34A7FD1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m in Sources */,
 				2C3E387B1FC2D4B5007A1405 /* NSMutableDictionary+ELThreadSafe.m in Sources */,
+				2C3E38B71FC44DB5007A1405 /* NSMutableSet+ELThreadSafe.m in Sources */,
 				2C34A7FA1FC3250D00AC6B50 /* NSObject+ELThreadSafe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +292,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3E38C01FC45657007A1405 /* NSObject+ELThreadSafe.m in Sources */,
+				2C3E38BF1FC45654007A1405 /* ELThreadSafeObject.m in Sources */,
+				2C3E38BE1FC45651007A1405 /* NSMutableSet+ELThreadSafe.m in Sources */,
+				2C3E38BD1FC4564D007A1405 /* NSMutableOrderedSet+ELThreadSafe.m in Sources */,
+				2C3E38BC1FC4564A007A1405 /* NSMutableDictionary+ELThreadSafe.m in Sources */,
+				2C3E38BB1FC45645007A1405 /* NSMutableArray+ELThreadSafe.m in Sources */,
+				2C3E38BA1FC45630007A1405 /* ELThreadSafeComparisonTests.m in Sources */,
 				2C3E38641FC2C61D007A1405 /* ELThreadSafeSuitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TV2WRE6V8Z;
-				INFOPLIST_FILE = ELThreadSafeSuit/Info.plist;
+				INFOPLIST_FILE = ELThreadSafeSuit/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Elenion.ELThreadSafeSuit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -403,7 +457,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TV2WRE6V8Z;
-				INFOPLIST_FILE = ELThreadSafeSuit/Info.plist;
+				INFOPLIST_FILE = ELThreadSafeSuit/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Elenion.ELThreadSafeSuit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
