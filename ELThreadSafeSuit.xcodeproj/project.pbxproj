@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C34A7FA1FC3250D00AC6B50 /* NSObject+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34A7F91FC3250D00AC6B50 /* NSObject+ELThreadSafe.m */; };
 		2C34A7FD1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m */; };
+		2C34A7FE1FC4823400AC6B50 /* TestSuitObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38C81FC458EE007A1405 /* TestSuitObject.m */; };
 		2C3E384F1FC2C61D007A1405 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E384E1FC2C61D007A1405 /* ViewController.m */; };
 		2C3E38521FC2C61D007A1405 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E38501FC2C61D007A1405 /* Main.storyboard */; };
 		2C3E38541FC2C61D007A1405 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E38531FC2C61D007A1405 /* Assets.xcassets */; };
@@ -292,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C34A7FE1FC4823400AC6B50 /* TestSuitObject.m in Sources */,
 				2C3E38C01FC45657007A1405 /* NSObject+ELThreadSafe.m in Sources */,
 				2C3E38BF1FC45654007A1405 /* ELThreadSafeObject.m in Sources */,
 				2C3E38BE1FC45651007A1405 /* NSMutableSet+ELThreadSafe.m in Sources */,

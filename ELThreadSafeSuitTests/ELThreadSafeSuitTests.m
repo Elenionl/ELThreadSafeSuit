@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-
+#import "NSMutableArray+ELThreadSafe.h"
 @interface ELThreadSafeSuitTests : XCTestCase
 
 @end
@@ -24,15 +24,8 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-    }];
+- (void)testIsMemberOfClass {
+    NSMutableArray *array = [[NSMutableArray new] el_threadSafeObject];
     
 }
 

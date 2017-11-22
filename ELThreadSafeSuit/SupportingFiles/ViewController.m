@@ -26,9 +26,11 @@
     NSLog(@"%@", testTwo);
     NSArray *testThree = [@[] arrayByAddingObjectsFromArray:array];
     NSLog(@"%@", testThree);
-    NSArray *testFour = @[@1].el_threadSafeMutableCopy.el_normalObject.el_threadSafeMutableCopy.el_normalObject;
+    NSArray *testFour = @[@1]._el._threadSafeObject;
     NSLog(@"%@", testFour);
+    NSLog(@"%@", array.description);
+    NSLog(@"%@", [array._el._threadSafeObject description]);
+    
 }
-
 
 @end

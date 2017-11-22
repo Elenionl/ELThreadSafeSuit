@@ -11,12 +11,16 @@
 @protocol TestSuitType<NSObject>
 
 - (void)writeObject:(NSString *)object;
+- (void)readObject:(NSString *)object;
 
 @property (strong) NSMutableArray *array;
 
-@optional
+@end
 
-- (void)readObject:(NSString *)object;
+@protocol TestAsMessagePoolType<NSObject>
+
+- (void)readObjects;
+- (void)randomReadObject;
 
 @end
 
@@ -25,7 +29,7 @@
 @property (nonatomic, strong) NSMutableArray *array;
 
 - (void)writeObject:(NSString *)object;
-
+- (void)readObject:(NSString *)object;
 @end
 
 @interface AtomicTestObject<TestSuitType> : NSObject
@@ -33,7 +37,7 @@
 @property (atomic, strong) NSMutableArray *array;
 
 - (void)writeObject:(NSString *)object;
-
+- (void)readObject:(NSString *)object;
 @end
 
 @interface LockTestObject<TestSuitType> : NSObject
@@ -41,14 +45,39 @@
 @property (atomic, strong) NSMutableArray *array;
 
 - (void)writeObject:(NSString *)object;
-
+- (void)readObject:(NSString *)object;
 @end
 
-@interface SyncTestObject<TestSuitType> : NSObject
+@interface SyncSelfTestObject<TestSuitType> : NSObject
 
 @property (atomic, strong) NSMutableArray *array;
 
 - (void)writeObject:(NSString *)object;
+- (void)readObject:(NSString *)object;
+@end
 
+@interface SerialQueueTestObject<TestSuitType> : NSObject
+
+@property (atomic, strong) NSMutableArray *array;
+
+- (void)writeObject:(NSString *)object;
+- (void)readObject:(NSString *)object;
+
+@end
+
+@interface ConcurrentQueueBarriarTestObject<TestSuitType> : NSObject
+
+@property (atomic, strong) NSMutableArray *array;
+
+- (void)writeObject:(NSString *)object;
+- (void)readObject:(NSString *)object;
+@end
+
+@interface ElTHreadSafeTestObject<TestSuitType> : NSObject
+
+@property (atomic, strong) NSMutableArray *array;
+
+- (void)writeObject:(NSString *)object;
+- (void)readObject:(NSString *)object;
 @end
 

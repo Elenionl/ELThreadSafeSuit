@@ -21,45 +21,13 @@
 
 #pragma mark - OverrideNSObjectMethods
 
-- (BOOL)isKindOfClass:(Class)aClass {
-    return [_innerObject isKindOfClass:aClass];
-}
-
-- (BOOL)isMemberOfClass:(Class)aClass {
-    return [_innerObject isMemberOfClass:aClass];
-}
-
-- (BOOL)isProxy {
-    return [_innerObject isProxy];
-}
-
-- (BOOL)conformsToProtocol:(Protocol *)aProtocol {
-    return [_innerObject conformsToProtocol:aProtocol];
-}
-
-- (BOOL)respondsToSelector:(SEL)aSelector {
-    return [super respondsToSelector:aSelector] || [_innerObject respondsToSelector:aSelector];
-}
-
-- (IMP)methodForSelector:(SEL)aSelector {
-    if ([self methodForSelector:aSelector]) {
-        return [self methodForSelector:aSelector];
-    }
-    return [_innerObject methodForSelector:aSelector];
-}
-
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@\n%@", super.description, [_innerObject description]];
-}
-
-- (NSString *)debugDescription {
-    return [NSString stringWithFormat:@"%@\n%@", super.debugDescription, [_innerObject debugDescription]];
+    return [NSString stringWithFormat:@"%@\n_innerObject:%@", super.description, [_innerObject description]];
 }
 
 #pragma mark - LifeCircle
 
 - (instancetype)initWithInnerObject:(id)innerObject {
-    self = [super init];
     if (self) {
         _innerObject = innerObject;
         _currentQueue = dispatch_queue_create([[NSString stringWithFormat:@"com.qygl.array.threadsafe.queue%d", &_innerObject] UTF8String], DISPATCH_QUEUE_CONCURRENT);

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ELThreadSafeObject<OT: NSObject *>: NSObject
+@interface ELThreadSafeObject<OT: NSObject *>: NSProxy
 
 @property (nonatomic, strong) OT innerObject;
 
