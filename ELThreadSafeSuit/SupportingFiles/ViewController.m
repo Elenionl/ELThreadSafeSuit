@@ -28,7 +28,7 @@ typedef void(^TimeBlock)(void);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.testType = SimpleLockUnlockTestType;
+    self.testType = LiveRoomSimulateTestType;
     [self test];
 }
 
@@ -158,14 +158,14 @@ typedef void(^TimeBlock)(void);
 - (void)testLiveRoomWithObject:(id<MessagePoolType>)object {
     CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
     //    NSLog(@"Object: %@ StartTime: %f", object, startTime);
-    dispatch_apply(500, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(size_t count) {
+    dispatch_apply(1000000, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(size_t count) {
         if (!(count % 58)) {
             [object findAndDelete:20];
         }
         if (!(count % 29)) {
             [object findAndChange:33];
         }
-        if (!(count % 2)) {
+        if (!(count % 5)) {
             [object writeWithAutoDeleteObject:[@(count) description]];
         }
         [object readAllObject];

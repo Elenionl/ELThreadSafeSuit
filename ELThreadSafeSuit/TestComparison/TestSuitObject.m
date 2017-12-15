@@ -944,11 +944,9 @@
 }
 
 - (void)readAllObject {
-    [_array el_threadSafeAction:^(id object) {
-        __block NSInteger total = 0;
-        [object enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            total += obj.integerValue;
-        }];
+    __block NSInteger total = 0;
+    [_array enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        total += obj.integerValue;
     }];
 }
 
