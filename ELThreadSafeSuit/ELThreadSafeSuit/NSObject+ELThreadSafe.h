@@ -10,13 +10,16 @@
 
 typedef BOOL(^ELThreadSafeFilterAction)(SEL aSelector);
 
-@interface NSObject (ELThreadSafe)
+typedef void(^ELThreadSafeSetAction)(id object);
 
-- (BOOL)el_isThreadSafe;
-- (instancetype)el_normalObject;
-- (instancetype)el_threadSafeObject;
+@interface NSObject (ELThreadSafe)
 
 @property (class, nonatomic, copy) ELThreadSafeFilterAction el_threadSafeFilterActionForClass;
 @property (nonatomic, copy) ELThreadSafeFilterAction el_threadSafeFilterActionForInstance;
+@property (nonatomic, readonly) BOOL el_isThreadSafe;
+@property (nonatomic, readonly) id el_normalObject;
+@property (nonatomic, readonly) id el_threadSafeObject;
+
+- (void)el_threadSafeAction:(ELThreadSafeSetAction)action;
 
 @end

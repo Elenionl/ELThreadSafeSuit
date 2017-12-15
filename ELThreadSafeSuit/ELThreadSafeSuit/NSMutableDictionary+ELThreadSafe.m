@@ -12,26 +12,25 @@
 @implementation NSMutableDictionary (ELThreadSafe)
 
 - (instancetype)el_threadSafeObject {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [NSMutableDictionary setEl_threadSafeFilterActionForClass:^BOOL(SEL aSelector) {
-            if (!aSelector) {
-                return false;
-            }
-            NSString *selectorName = NSStringFromSelector(aSelector);
-            if ([selectorName hasPrefix:@"add"]) {
-                return true;
-            }
-            if ([selectorName hasPrefix:@"remove"]) {
-                return true;
-            }
-            if ([selectorName hasPrefix:@"set"]) {
-                return true;
-            }
-            return false;
-        }];
-    });
-    return [super el_threadSafeObject];
+    id object = [super el_threadSafeObject];
+    NSHashTable *protectTable = [self protectTable];
+    [object setEl_threadSafeFilterActionForInstance:^BOOL(SEL aSelector) {
+        return [protectTable containsObject:NSStringFromSelector(aSelector)];
+    }];
+    return object;
+}
+
+- (NSHashTable *)protectTable {
+    NSHashTable *table = [NSHashTable hashTableWithOptions:NSPointerFunctionsStrongMemory];
+    [table addObject:NSStringFromSelector(@selector(setObject:forKey:))];
+    [table addObject:NSStringFromSelector(@selector(setObject:forKeyedSubscript:))];
+    [table addObject:NSStringFromSelector(@selector(setValue:forKey:))];
+    [table addObject:NSStringFromSelector(@selector(addEntriesFromDictionary:))];
+    [table addObject:NSStringFromSelector(@selector(setDictionary:))];
+    [table addObject:NSStringFromSelector(@selector(removeObjectForKey:))];
+    [table addObject:NSStringFromSelector(@selector(removeAllObjects))];
+    [table addObject:NSStringFromSelector(@selector(removeObjectsForKeys:))];
+    return table;
 }
 
 + (instancetype)el_threadSafeDictionary {

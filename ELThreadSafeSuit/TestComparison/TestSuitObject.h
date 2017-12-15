@@ -8,76 +8,100 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol TestSuitType<NSObject>
+@protocol LockUnlockType<NSObject>
 
-- (void)writeObject:(NSString *)object;
-- (void)readObject:(NSString *)object;
-
-@property (strong) NSMutableArray *array;
+- (void)lockAndUnlock;
 
 @end
 
-@protocol TestAsMessagePoolType<NSObject>
+@protocol ReadWriteType<NSObject>
 
-- (void)readObjects;
-- (void)randomReadObject;
+- (void)writeObject:(NSString *)object;
+- (void)readObject;
+
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
 
 @end
 
-@interface OriginTestObject<TestSuitType> : NSObject
+@protocol MessagePoolType<NSObject>
 
-@property (nonatomic, strong) NSMutableArray *array;
-
-- (void)writeObject:(NSString *)object;
-- (void)readObject:(NSString *)object;
+@required
+- (void)writeWithAutoDeleteObject:(NSString *)object;
+- (void)deleteObject:(NSUInteger)index;
+- (void)findAndDelete:(NSInteger)number;
+- (void)readAllObject;
+- (void)findAndChange:(NSInteger)number;
 @end
 
-@interface AtomicTestObject<TestSuitType> : NSObject
+@interface NSLockTestObject : NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
 
-@property (atomic, strong) NSMutableArray *array;
-
-- (void)writeObject:(NSString *)object;
-- (void)readObject:(NSString *)object;
-@end
-
-@interface LockTestObject<TestSuitType> : NSObject
-
-@property (atomic, strong) NSMutableArray *array;
-
-- (void)writeObject:(NSString *)object;
-- (void)readObject:(NSString *)object;
-@end
-
-@interface SyncSelfTestObject<TestSuitType> : NSObject
-
-@property (atomic, strong) NSMutableArray *array;
-
-- (void)writeObject:(NSString *)object;
-- (void)readObject:(NSString *)object;
-@end
-
-@interface SerialQueueTestObject<TestSuitType> : NSObject
-
-@property (atomic, strong) NSMutableArray *array;
-
-- (void)writeObject:(NSString *)object;
-- (void)readObject:(NSString *)object;
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
 
 @end
 
-@interface ConcurrentQueueBarriarTestObject<TestSuitType> : NSObject
+@interface NSConditionTestObject : NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
 
-@property (atomic, strong) NSMutableArray *array;
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
 
-- (void)writeObject:(NSString *)object;
-- (void)readObject:(NSString *)object;
 @end
 
-@interface ElTHreadSafeTestObject<TestSuitType> : NSObject
+@interface NSConditionLockTestObject : NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
 
-@property (atomic, strong) NSMutableArray *array;
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
 
-- (void)writeObject:(NSString *)object;
-- (void)readObject:(NSString *)object;
+@end
+
+@interface NSRecursiveLockTestObject : NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
+
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
+
+@end
+
+@interface PthreadMutexTTestObject : NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
+
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
+
+@end
+
+@interface DispatchSemaphoreTTestObject : NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
+
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
+
+@end
+
+@interface OSSpinLockTestObject : NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
+
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
+
+@end
+
+@interface OSUnfairLockTestObject : NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
+
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
+
+@end
+
+@interface SyncSelfTestObject: NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
+
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
+
+@end
+
+@interface SerialQueueTestObject: NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
+
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
+
+@end
+
+@interface ConcurrentQueueBarriarTestObject: NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
+
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
+
+@end
+
+@interface ElTHreadSafeTestObject: NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
+
+@property (nonatomic, strong) NSMutableArray<NSString *> *array;
+
 @end
 

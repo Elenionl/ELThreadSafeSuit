@@ -6,6 +6,8 @@
 //  Copyright © 2017年 Elenion. All rights reserved.
 //
 
+typedef id(^ELAutoSelectorAction)(id _self, id sender, ...);
+
 #import "ELThreadSafeObject.h"
 #import "NSObject+ELThreadSafe.h"
 #import "NSObject-_NSIsKinds.h"
@@ -17,6 +19,7 @@
 @implementation ELThreadSafeObject {
     id _innerObject;
     dispatch_queue_t _currentQueue;
+    NSString *_identifier;
 }
 
 #pragma mark - OverrideNSObjectMethods
@@ -30,7 +33,10 @@
 - (instancetype)initWithInnerObject:(id)innerObject {
     if (self) {
         _innerObject = innerObject;
-        _currentQueue = dispatch_queue_create([[NSString stringWithFormat:@"com.qygl.array.threadsafe.queue%d", &_innerObject] UTF8String], DISPATCH_QUEUE_CONCURRENT);
+        _identifier = [NSString stringWithFormat:@"com.elgl.threadsafe.%@", [self description]];
+         CFStringRef identifierRef = (__bridge CFStringRef)_identifier;
+        _currentQueue = dispatch_queue_create([_identifier UTF8String], DISPATCH_QUEUE_CONCURRENT);
+        dispatch_queue_set_specific(_currentQueue, &_identifier, (void *)identifierRef, NULL);
     }
     return self;
 }
@@ -38,7 +44,12 @@
 #pragma mark - Forward
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-    if ([self isSelectorNeedProtect:anInvocation.selector]) {
+//    CFStringRef identifierRef = dispatch_get_specific(&_identifier);
+//    if ([_identifier isEqualToString:((__bridge NSString *)identifierRef)]) {
+//        [anInvocation invokeWithTarget:_innerObject];
+//    }
+//    else
+        if ([self isSelectorNeedProtect:anInvocation.selector]) {
         dispatch_barrier_sync(_currentQueue, ^{
             [anInvocation invokeWithTarget:_innerObject];
         });
@@ -153,6 +164,14 @@
         return [_innerObject isNSArray__];
     }
     return false;
+}
+
+- (void)el_threadSafeAction:(ELThreadSafeSetAction)action {
+    if (action) {
+        dispatch_barrier_sync(_currentQueue, ^{
+            action(_innerObject);
+        });
+    }
 }
 
 @end

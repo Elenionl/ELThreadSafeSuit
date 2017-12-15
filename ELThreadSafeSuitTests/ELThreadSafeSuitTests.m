@@ -24,9 +24,4 @@
     [super tearDown];
 }
 
-- (void)testIsMemberOfClass {
-    NSMutableArray *array = [[NSMutableArray new] el_threadSafeObject];
-    
-}
-
 @end

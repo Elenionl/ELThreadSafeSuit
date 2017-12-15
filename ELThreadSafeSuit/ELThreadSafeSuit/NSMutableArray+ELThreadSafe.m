@@ -12,44 +12,49 @@
 @implementation NSMutableArray (ELThreadSafe)
 
 - (instancetype)el_threadSafeObject {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [NSMutableArray setEl_threadSafeFilterActionForClass:^BOOL(SEL aSelector) {
-            if (!aSelector) {
-                return false;
-            }
-            NSString *selectorName = NSStringFromSelector(aSelector);
-            if ([selectorName containsString:@"Observer"]) {
-                return false;
-            }
-            if ([selectorName hasPrefix:@"add"]) {
-                return true;
-            }
-            if ([selectorName hasPrefix:@"insert"]) {
-                return true;
-            }
-            if ([selectorName hasPrefix:@"remove"]) {
-                return true;
-            }
-            if ([selectorName hasPrefix:@"set"]) {
-                return true;
-            }
-            if ([selectorName hasPrefix:@"replace"]) {
-                return true;
-            }
-            if ([selectorName hasPrefix:@"exchange"]) {
-                return true;
-            }
-            if ([selectorName hasPrefix:@"sort"] && ![selectorName hasPrefix:@"sorted"]) {
-                return true;
-            }
-            if ([selectorName hasPrefix:@"filter"] && ![selectorName hasPrefix:@"filtered"]) {
-                return true;
-            }
-            return false;
-        }];
-    });
-    return [super el_threadSafeObject];
+    
+    id object = [super el_threadSafeObject];
+    NSHashTable *protectTable = [self protectTable];
+    [object setEl_threadSafeFilterActionForInstance:^BOOL(SEL aSelector) {
+        return [protectTable containsObject:NSStringFromSelector(aSelector)];
+    }];
+    return object;
+}
+
+- (NSHashTable *)protectTable {
+    NSHashTable *table = [NSHashTable hashTableWithOptions:NSPointerFunctionsStrongMemory];
+    
+    [table addObject:NSStringFromSelector(@selector(addObject:))];
+    [table addObject:NSStringFromSelector(@selector(addObjectsFromArray:))];
+    [table addObject:NSStringFromSelector(@selector(insertObject:atIndex:))];
+    [table addObject:NSStringFromSelector(@selector(insertObjects:atIndexes:))];
+    [table addObject:NSStringFromSelector(@selector(removeAllObjects))];
+    [table addObject:NSStringFromSelector(@selector(removeLastObject))];
+    [table addObject:NSStringFromSelector(@selector(removeObject:))];
+    [table addObject:NSStringFromSelector(@selector(removeObject:inRange:))];
+    [table addObject:NSStringFromSelector(@selector(removeObjectAtIndex:))];
+    [table addObject:NSStringFromSelector(@selector(removeObjectsAtIndexes:))];
+    [table addObject:NSStringFromSelector(@selector(removeObjectIdenticalTo:))];
+    [table addObject:NSStringFromSelector(@selector(removeObjectIdenticalTo:inRange:))];
+    [table addObject:NSStringFromSelector(@selector(removeObjectsFromIndices:numIndices:))];
+    [table addObject:NSStringFromSelector(@selector(removeObjectsInArray:))];
+    [table addObject:NSStringFromSelector(@selector(removeObject:inRange:))];
+    [table addObject:NSStringFromSelector(@selector(replaceObjectAtIndex:withObject:))];
+    [table addObject:NSStringFromSelector(@selector(setObject:atIndexedSubscript:))];
+    [table addObject:NSStringFromSelector(@selector(replaceObjectsAtIndexes:withObjects:))];
+    [table addObject:NSStringFromSelector(@selector(replaceObjectsInRange:withObjectsFromArray:range:
+))];
+    [table addObject:NSStringFromSelector(@selector(replaceObjectsInRange:withObjectsFromArray:))];
+    [table addObject:NSStringFromSelector(@selector(setArray:))];
+    [table addObject:NSStringFromSelector(@selector(filterUsingPredicate:))];
+    [table addObject:NSStringFromSelector(@selector(exchangeObjectAtIndex:withObjectAtIndex:))];
+    [table addObject:NSStringFromSelector(@selector(sortUsingDescriptors:))];
+    [table addObject:NSStringFromSelector(@selector(sortUsingComparator:))];
+    [table addObject:NSStringFromSelector(@selector(sortWithOptions:usingComparator:))];
+    [table addObject:NSStringFromSelector(@selector(sortUsingFunction:context:))];
+    [table addObject:NSStringFromSelector(@selector(sortUsingSelector:))];
+    return table;
+    
 }
 
 + (instancetype)el_threadSafeArray {

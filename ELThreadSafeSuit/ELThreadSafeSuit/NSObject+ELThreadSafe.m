@@ -10,6 +10,7 @@
 #import "ELThreadSafeObject.h"
 #import <objc/runtime.h>
 
+
 @implementation NSObject (ELThreadSafe)
 
 - (BOOL)el_isThreadSafe {
@@ -26,11 +27,11 @@
 }
 
 + (void)setEl_threadSafeFilterActionForClass:(ELThreadSafeFilterAction)el_threadSafeFilterActionForClass {
-    objc_setAssociatedObject(self, sel_getName(@selector(setEl_threadSafeFilterActionForClass:)), el_threadSafeFilterActionForClass, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject([self class], sel_getName(@selector(setEl_threadSafeFilterActionForClass:)), el_threadSafeFilterActionForClass, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 + (ELThreadSafeFilterAction)el_threadSafeFilterActionForClass {
-    return objc_getAssociatedObject(self, sel_getName(@selector(setEl_threadSafeFilterActionForClass:)));
+    return objc_getAssociatedObject([self class], sel_getName(@selector(setEl_threadSafeFilterActionForClass:)));
 }
 
 - (void)setEl_threadSafeFilterActionForInstance:(ELThreadSafeFilterAction)el_threadSafeFilterActionForInstance {
@@ -39,6 +40,12 @@
 
 - (ELThreadSafeFilterAction)el_threadSafeFilterActionForInstance {
     return objc_getAssociatedObject(self, sel_getName(@selector(setEl_threadSafeFilterActionForInstance:)));
+}
+
+- (void)el_threadSafeAction:(ELThreadSafeSetAction)action {
+    if (action) {
+        action(self);
+    }
 }
 
 @end

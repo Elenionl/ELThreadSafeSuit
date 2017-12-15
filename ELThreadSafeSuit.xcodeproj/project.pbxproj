@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C0A08361FDA944300282884 /* NSHashTable+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A08351FDA944300282884 /* NSHashTable+ELThreadSafe.m */; };
+		2C0A08391FDB7C4E00282884 /* NSMapTable+ELThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A08381FDB7C4E00282884 /* NSMapTable+ELThread.m */; };
 		2C34A7FA1FC3250D00AC6B50 /* NSObject+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34A7F91FC3250D00AC6B50 /* NSObject+ELThreadSafe.m */; };
 		2C34A7FD1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m */; };
 		2C34A7FE1FC4823400AC6B50 /* TestSuitObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C3E38C81FC458EE007A1405 /* TestSuitObject.m */; };
@@ -42,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C0A08341FDA944300282884 /* NSHashTable+ELThreadSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSHashTable+ELThreadSafe.h"; sourceTree = "<group>"; };
+		2C0A08351FDA944300282884 /* NSHashTable+ELThreadSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSHashTable+ELThreadSafe.m"; sourceTree = "<group>"; };
+		2C0A08371FDB7C4E00282884 /* NSMapTable+ELThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+ELThread.h"; sourceTree = "<group>"; };
+		2C0A08381FDB7C4E00282884 /* NSMapTable+ELThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+ELThread.m"; sourceTree = "<group>"; };
 		2C34A7F81FC3250D00AC6B50 /* NSObject+ELThreadSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ELThreadSafe.h"; sourceTree = "<group>"; };
 		2C34A7F91FC3250D00AC6B50 /* NSObject+ELThreadSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ELThreadSafe.m"; sourceTree = "<group>"; };
 		2C34A7FB1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableOrderedSet+ELThreadSafe.h"; sourceTree = "<group>"; };
@@ -156,6 +162,10 @@
 				2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m */,
 				2C3E38B51FC44DB5007A1405 /* NSMutableSet+ELThreadSafe.h */,
 				2C3E38B61FC44DB5007A1405 /* NSMutableSet+ELThreadSafe.m */,
+				2C0A08341FDA944300282884 /* NSHashTable+ELThreadSafe.h */,
+				2C0A08351FDA944300282884 /* NSHashTable+ELThreadSafe.m */,
+				2C0A08371FDB7C4E00282884 /* NSMapTable+ELThread.h */,
+				2C0A08381FDB7C4E00282884 /* NSMapTable+ELThread.m */,
 				2C3E387C1FC2F74B007A1405 /* ELThreadSafeObject.h */,
 				2C3E387D1FC2F74B007A1405 /* ELThreadSafeObject.m */,
 				2C34A7F81FC3250D00AC6B50 /* NSObject+ELThreadSafe.h */,
@@ -281,6 +291,8 @@
 				2C3E38C91FC458EE007A1405 /* TestSuitObject.m in Sources */,
 				2C3E387A1FC2D4B5007A1405 /* NSMutableArray+ELThreadSafe.m in Sources */,
 				2C3E387E1FC2F74B007A1405 /* ELThreadSafeObject.m in Sources */,
+				2C0A08361FDA944300282884 /* NSHashTable+ELThreadSafe.m in Sources */,
+				2C0A08391FDB7C4E00282884 /* NSMapTable+ELThread.m in Sources */,
 				2C3E385A1FC2C61D007A1405 /* main.m in Sources */,
 				2C34A7FD1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m in Sources */,
 				2C3E387B1FC2D4B5007A1405 /* NSMutableDictionary+ELThreadSafe.m in Sources */,

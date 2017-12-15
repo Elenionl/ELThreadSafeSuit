@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "TestSuitObject.h"
-#define TEST dispatch_apply(100000, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(size_t i) {if (i % 3 || i == 0) { [object writeObject:@"123"]; } else {[object readObject:@"123"]; }});
+#define TEST dispatch_apply(5000, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(size_t i) {if (i % 3 || i == 0) { [object writeObject:@"123"]; } else {[object readObject]; }});
 
 @interface ELThreadSafeComparisonTests: XCTestCase
 
@@ -30,38 +30,108 @@
 //    }];
 //}
 
-- (void)testLock {
+- (void)testWithObject:(id<TestAsMessagePoolType>)object {
+    CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
+    NSLog(@"Object: %@ StartTime: %f", object, startTime);
+    dispatch_apply(10000, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(size_t count) {
+        if (!(count % 58)) {
+            [object findAndDelete:20];
+        }
+        if (!(count % 29)) {
+            [object findAndChange:33];
+        }
+        if (!(count % 2)) {
+            [object writeWithAutoDeleteObject:[@(count) description]];
+            
+        }
+        [object readAllObject];
+    });
+    CFAbsoluteTime endTime = CFAbsoluteTimeGetCurrent();
+    NSLog(@"Object: %@ EndTime: %f", object, endTime);
+    NSLog(@"Object: %@ TimeInterval: %f", object, (endTime - startTime));
+}
+
+- (void)testNSLock {
     [self measureBlock:^{
-        LockTestObject *object = [[LockTestObject alloc] init];
-        TEST
+        NSLockTestObject *object = [[NSLockTestObject alloc] init];
+        [self testWithObject:object];
+    }];
+}
+
+- (void)testNSCondition {
+    [self measureBlock:^{
+        NSConditionTestObject *object = [[NSConditionTestObject alloc] init];
+        [self testWithObject:object];
+    }];
+}
+
+- (void)testNSConditionLock {
+    [self measureBlock:^{
+        NSConditionLockTestObject *object = [[NSConditionLockTestObject alloc] init];
+        [self testWithObject:object];
+    }];
+}
+
+- (void)testNSRecursiveLock {
+    [self measureBlock:^{
+        NSRecursiveLockTestObject *object = [[NSRecursiveLockTestObject alloc] init];
+        [self testWithObject:object];
+    }];
+}
+
+- (void)testPthreadMutexT {
+    [self measureBlock:^{
+        PthreadMutexTTestObject *object = [[PthreadMutexTTestObject alloc] init];
+        [self testWithObject:object];
+    }];
+}
+
+- (void)testDispatchSemaphoreT {
+    [self measureBlock:^{
+        DispatchSemaphoreTTestObject *object = [[DispatchSemaphoreTTestObject alloc] init];
+        [self testWithObject:object];
+    }];
+}
+
+- (void)testOSSpinLock {
+    [self measureBlock:^{
+        OSSpinLockTestObject *object = [[OSSpinLockTestObject alloc] init];
+        [self testWithObject:object];
+    }];
+}
+
+- (void)testOSUnfairLock {
+    [self measureBlock:^{
+        OSUnfairLockTestObject *object = [[OSUnfairLockTestObject alloc] init];
+        [self testWithObject:object];
     }];
 }
 
 - (void)testSyncSelf {
     [self measureBlock:^{
         SyncSelfTestObject *object = [[SyncSelfTestObject alloc] init];
-        TEST
+        [self testWithObject:object];
     }];
 }
 
-- (void)testSerialSyncSelf {
+- (void)testSerialSync {
     [self measureBlock:^{
         SerialQueueTestObject *object = [[SerialQueueTestObject alloc] init];
-        TEST
+        [self testWithObject:object];
     }];
 }
 
-- (void)testSerialAsyncSelf {
+- (void)testSerialAsync {
     [self measureBlock:^{
         ConcurrentQueueBarriarTestObject *object = [[ConcurrentQueueBarriarTestObject alloc] init];
-        TEST
+        [self testWithObject:object];
     }];
 }
 
 - (void)testElThreadSafe {
     [self measureBlock:^{
         ElTHreadSafeTestObject *object = [[ElTHreadSafeTestObject alloc] init];
-        TEST
+        [self testWithObject:object];
     }];
 }
 
