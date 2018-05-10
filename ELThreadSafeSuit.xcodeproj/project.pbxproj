@@ -90,8 +90,6 @@
 		2C34A7F91FC3250D00AC6B50 /* NSObject+ELThreadSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ELThreadSafe.m"; sourceTree = "<group>"; };
 		2C34A7FB1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableOrderedSet+ELThreadSafe.h"; sourceTree = "<group>"; };
 		2C34A7FC1FC3311F00AC6B50 /* NSMutableOrderedSet+ELThreadSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableOrderedSet+ELThreadSafe.m"; sourceTree = "<group>"; };
-		2C3E38631FC2C61D007A1405 /* ELThreadSafeSuitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELThreadSafeSuitTests.m; sourceTree = "<group>"; };
-		2C3E38651FC2C61D007A1405 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C3E38761FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ELThreadSafe.m"; sourceTree = "<group>"; };
 		2C3E38771FC2D4B4007A1405 /* NSMutableArray+ELThreadSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ELThreadSafe.h"; sourceTree = "<group>"; };
 		2C3E38781FC2D4B4007A1405 /* NSMutableDictionary+ELThreadSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ELThreadSafe.m"; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 		2C3E38B21FC449EC007A1405 /* NSObject-_NSIsKinds.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject-_NSIsKinds.h"; sourceTree = "<group>"; };
 		2C3E38B51FC44DB5007A1405 /* NSMutableSet+ELThreadSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableSet+ELThreadSafe.h"; sourceTree = "<group>"; };
 		2C3E38B61FC44DB5007A1405 /* NSMutableSet+ELThreadSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableSet+ELThreadSafe.m"; sourceTree = "<group>"; };
-		2C3E38B91FC45630007A1405 /* ELThreadSafeComparisonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELThreadSafeComparisonTests.m; sourceTree = "<group>"; };
 		2C3E38C71FC458EE007A1405 /* TestSuitObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestSuitObject.h; sourceTree = "<group>"; };
 		2C3E38C81FC458EE007A1405 /* TestSuitObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSuitObject.m; sourceTree = "<group>"; };
 		2CD69A4820A3DB3F004C8731 /* ELThreadSafeSuitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELThreadSafeSuitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,8 +170,6 @@
 		2C3E383E1FC2C61C007A1405 = {
 			isa = PBXGroup;
 			children = (
-				2C3E38491FC2C61C007A1405 /* ELThreadSafeSuit */,
-				2C3E38621FC2C61D007A1405 /* ELThreadSafeSuitTests */,
 				2C3131FC20A3339100E32E3A /* ELThreadSafeSuit */,
 				2CD69A4920A3DB3F004C8731 /* ELThreadSafeSuitTests */,
 				2CD69A5A20A3E2B0004C8731 /* ELTrheadSafeSuitDemo */,
@@ -191,31 +186,6 @@
 				2CD69A5920A3E2B0004C8731 /* ELTrheadSafeSuitDemo.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		2C3E38491FC2C61C007A1405 /* ELThreadSafeSuit */ = {
-			isa = PBXGroup;
-			children = (
-				2C3E38C31FC458B3007A1405 /* TestComparison */,
-			);
-			path = ELThreadSafeSuit;
-			sourceTree = "<group>";
-		};
-		2C3E38621FC2C61D007A1405 /* ELThreadSafeSuitTests */ = {
-			isa = PBXGroup;
-			children = (
-				2C3E38631FC2C61D007A1405 /* ELThreadSafeSuitTests.m */,
-				2C3E38B91FC45630007A1405 /* ELThreadSafeComparisonTests.m */,
-				2C3E38651FC2C61D007A1405 /* Info.plist */,
-			);
-			path = ELThreadSafeSuitTests;
-			sourceTree = "<group>";
-		};
-		2C3E38C31FC458B3007A1405 /* TestComparison */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TestComparison;
 			sourceTree = "<group>";
 		};
 		2CD69A4920A3DB3F004C8731 /* ELThreadSafeSuitTests */ = {
@@ -325,6 +295,7 @@
 					2CD69A4720A3DB3F004C8731 = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
+						TestTargetID = 2CD69A5820A3E2B0004C8731;
 					};
 					2CD69A5820A3E2B0004C8731 = {
 						CreatedOnToolsVersion = 9.3;
@@ -604,6 +575,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Elenion.ELThreadSafeSuitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ELTrheadSafeSuitDemo.app/ELTrheadSafeSuitDemo";
 			};
 			name = Debug;
 		};
@@ -623,6 +595,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Elenion.ELThreadSafeSuitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ELTrheadSafeSuitDemo.app/ELTrheadSafeSuitDemo";
 			};
 			name = Release;
 		};
