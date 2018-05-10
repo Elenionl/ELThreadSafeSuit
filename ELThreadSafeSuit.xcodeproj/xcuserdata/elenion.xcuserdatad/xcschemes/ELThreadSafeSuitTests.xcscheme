@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0910"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2C3131FA20A3339100E32E3A"
-               BuildableName = "libELThreadSafeSuit.a"
-               BlueprintName = "ELThreadSafeSuit"
-               ReferencedContainer = "container:ELThreadSafeSuit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -42,9 +26,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2C3131FA20A3339100E32E3A"
-            BuildableName = "libELThreadSafeSuit.a"
-            BlueprintName = "ELThreadSafeSuit"
+            BlueprintIdentifier = "2CD69A5820A3E2B0004C8731"
+            BuildableName = "ELTrheadSafeSuitDemo.app"
+            BlueprintName = "ELTrheadSafeSuitDemo"
             ReferencedContainer = "container:ELThreadSafeSuit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +49,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2C3131FA20A3339100E32E3A"
-            BuildableName = "libELThreadSafeSuit.a"
-            BlueprintName = "ELThreadSafeSuit"
+            BlueprintIdentifier = "2CD69A5820A3E2B0004C8731"
+            BuildableName = "ELTrheadSafeSuitDemo.app"
+            BlueprintName = "ELTrheadSafeSuitDemo"
             ReferencedContainer = "container:ELThreadSafeSuit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -80,16 +64,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2C3131FA20A3339100E32E3A"
-            BuildableName = "libELThreadSafeSuit.a"
-            BlueprintName = "ELThreadSafeSuit"
+            BlueprintIdentifier = "2CD69A5820A3E2B0004C8731"
+            BuildableName = "ELTrheadSafeSuitDemo.app"
+            BlueprintName = "ELTrheadSafeSuitDemo"
             ReferencedContainer = "container:ELThreadSafeSuit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

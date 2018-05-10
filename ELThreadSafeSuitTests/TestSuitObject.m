@@ -753,13 +753,13 @@
 
 - (void)writeObject:(NSString *)object {
     dispatch_sync(_queue, ^{
-         [_array addObject:object];
+         [self.array addObject:object];
     });
 }
 
 - (void)readObject {
     dispatch_sync(_queue, ^{
-        NSInteger count = _array.count;
+        NSInteger count = self.array.count;
         count++;
     });
 }
@@ -767,26 +767,26 @@
 
 - (void)writeWithAutoDeleteObject:(NSString *)object {
     dispatch_sync(_queue, ^{
-        if (_array.count < 50) {
-            [_array addObject:object];
+        if (self.array.count < 50) {
+            [self.array addObject:object];
         }
         else {
-            [_array removeObjectsInRange:NSMakeRange(0, 20)];
+            [self.array removeObjectsInRange:NSMakeRange(0, 20)];
         }
     });
 }
 
 - (void)deleteObject:(NSUInteger)index {
     dispatch_sync(_queue, ^{
-        [_array removeObjectAtIndex:index];
+        [self.array removeObjectAtIndex:index];
     });
 }
 
 - (void)findAndDelete:(NSInteger)number {
     dispatch_sync(_queue, ^{
-        for (NSString *content in _array.reverseObjectEnumerator) {
+        for (NSString *content in self.array.reverseObjectEnumerator) {
             if (!(content.integerValue / number)) {
-                [_array removeObject:content];
+                [self.array removeObject:content];
             }
         }
     });
@@ -795,7 +795,7 @@
 - (void)readAllObject {
     dispatch_sync(_queue, ^{
         __block NSInteger total = 0;
-        [_array enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.array enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             total += obj.integerValue;
         }];
     });
@@ -803,9 +803,9 @@
 
 - (void)findAndChange:(NSInteger)number {
     dispatch_sync(_queue, ^{
-        for (int i = 0; i < _array.count; i++) {
-            if (!([_array[i] integerValue] / number)) {
-                _array[i] = [NSString stringWithFormat:@"%ld", [_array[i] integerValue] + number];
+        for (int i = 0; i < self.array.count; i++) {
+            if (!([self.array[i] integerValue] / number)) {
+                self.array[i] = [NSString stringWithFormat:@"%ld", [self.array[i] integerValue] + number];
             }
         }
     });
@@ -834,39 +834,39 @@
 
 - (void)writeObject:(NSString *)object {
     dispatch_barrier_sync(_queue, ^{
-        [_array addObject:object];
+        [self.array addObject:object];
     });
 }
 
 - (void)readObject {
     dispatch_sync(_queue, ^{
-        NSUInteger count = _array.count;
+        NSUInteger count = self.array.count;
         count++;
     });
 }
 
 - (void)writeWithAutoDeleteObject:(NSString *)object {
     dispatch_barrier_sync(_queue, ^{
-        if (_array.count < 50) {
-            [_array addObject:object];
+        if (self.array.count < 50) {
+            [self.array addObject:object];
         }
         else {
-            [_array removeObjectsInRange:NSMakeRange(0, 20)];
+            [self.array removeObjectsInRange:NSMakeRange(0, 20)];
         }
     });
 }
 
 - (void)deleteObject:(NSUInteger)index {
     dispatch_sync(_queue, ^{
-        [_array removeObjectAtIndex:index];
+        [self.array removeObjectAtIndex:index];
     });
 }
 
 - (void)findAndDelete:(NSInteger)number {
     dispatch_sync(_queue, ^{
-        for (NSString *content in _array.reverseObjectEnumerator) {
+        for (NSString *content in self.array.reverseObjectEnumerator) {
             if (!(content.integerValue / number)) {
-                [_array removeObject:content];
+                [self.array removeObject:content];
             }
         }
     });
@@ -875,7 +875,7 @@
 - (void)readAllObject {
     dispatch_sync(_queue, ^{
         __block NSInteger total = 0;
-        [_array enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.array enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             total += obj.integerValue;
         }];
     });
@@ -883,9 +883,9 @@
 
 - (void)findAndChange:(NSInteger)number {
     dispatch_sync(_queue, ^{
-        for (int i = 0; i < _array.count; i++) {
-            if (!([_array[i] integerValue] / number)) {
-                _array[i] = [NSString stringWithFormat:@"%ld", [_array[i] integerValue] + number];
+        for (int i = 0; i < self.array.count; i++) {
+            if (!([self.array[i] integerValue] / number)) {
+                self.array[i] = [NSString stringWithFormat:@"%ld", [self.array[i] integerValue] + number];
             }
         }
     });
@@ -899,7 +899,7 @@
 
 @end
 
-@implementation ElTHreadSafeTestObject
+@implementation ELThreadSafeTestObject
 
 - (instancetype)init {
     self = [super init];

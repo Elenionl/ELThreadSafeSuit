@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  ELThreadSafeSuit
+//  ELTrheadSafeSuitDemo
 //
-//  Created by Elenion on 2017/11/20.
-//  Copyright © 2017年 Elenion. All rights reserved.
+//  Created by Elenion on 2018/5/10.
+//  Copyright © 2018年 Elenion. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

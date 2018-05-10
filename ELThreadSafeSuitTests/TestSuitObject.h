@@ -99,7 +99,7 @@
 
 @end
 
-@interface ElTHreadSafeTestObject: NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
+@interface ELThreadSafeTestObject: NSObject<LockUnlockType, ReadWriteType, MessagePoolType>
 
 @property (nonatomic, strong) NSMutableArray<NSString *> *array;
 

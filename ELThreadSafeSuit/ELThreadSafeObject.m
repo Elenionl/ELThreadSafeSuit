@@ -51,12 +51,12 @@ typedef id(^ELAutoSelectorAction)(id _self, id sender, ...);
 //    else
         if ([self isSelectorNeedProtect:anInvocation.selector]) {
         dispatch_barrier_sync(_currentQueue, ^{
-            [anInvocation invokeWithTarget:_innerObject];
+            [anInvocation invokeWithTarget:self.innerObject];
         });
     }
     else {
         dispatch_sync(_currentQueue, ^{
-            [anInvocation invokeWithTarget:_innerObject];
+            [anInvocation invokeWithTarget:self.innerObject];
         });
     }
 }
@@ -169,7 +169,7 @@ typedef id(^ELAutoSelectorAction)(id _self, id sender, ...);
 - (void)el_threadSafeAction:(ELThreadSafeSetAction)action {
     if (action) {
         dispatch_barrier_sync(_currentQueue, ^{
-            action(_innerObject);
+            action(self.innerObject);
         });
     }
 }
